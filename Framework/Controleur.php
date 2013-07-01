@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Requete.php';
+
 /**
  * Classe abstraite Controleur
  * Fournit des services communs aux classes Controleur dérivées
@@ -8,65 +10,40 @@
  */
 abstract class Controleur {
 
-    /**
-     * Génère une vue (fichier HTML contenant des éléments dynamiques PHP)
-     * 
-     * @param type $vue Le nom de la vue (nom du fichier dans le répertoire des vues, sans extension)
-     * @param type $donnees Le tableau des données dynamiques utilisées par la vue 
-     * @throws Exception Si le fichier vue est introuvable
-     */
-    protected function genererVue($vue, $donnees = array()) {
-        $fichierVue = 'Vue/' . $vue . '.php';
+    protected $requete;
+    private $action;
+
+    public function __construct(Requete $requete) {
+        $this->requete = $requete;
+    }
+
+    public function executerAction() {
+        $this->action = "index";
+        if ($this->requete->existeParametre("action")) {
+            $this->action = $this->requete->getParametre("action");
+        }
+        if (method_exists($this, $this->action)) {
+            return $this->{$this->action}();
+        }
+        else {
+            $classeControleur = get_class($this);
+            throw new Exception("Action '$this->action' non définie dans la classe $classeControleur");
+        }
+    }
+
+    protected function genererVue($donnees = array()) {
+        $classeControleur = get_class($this);
+        $nomControleur = str_replace("Controleur", "", $classeControleur);
+        $fichierVue = "Vue/" . $nomControleur . "/" . $this->action . ".php";
         if (file_exists($fichierVue)) {
             // Rend les éléments du tableau $donnees accessibles dans la vue
             extract($donnees);
             // Inclut la vue, ce qui déclenche son affichage
             require $fichierVue;
         }
-        else
-            throw new Exception("Fichier $fichierVue non trouvé");
+        else {
+            throw new Exception("Fichier '$fichierVue' introuvable");
+        }
     }
 
-    /**
-     * Affiche la vue d'erreur
-     * 
-     * @param type $msgErreur Le message d'erreur affiché dans la vue
-     */
-    protected function afficherErreur($msgErreur) {
-        require 'Vue/erreur.php';
-    }
- 
-    /**
-     * Récupère un paramètre de l'URL (recherche dans $_GET)
-     * 
-     * @param type $nomParametre Le nom du paramètre
-     * @return type La valeur du paramètre (string)
-     * @throws Exception Si le paramètre est introuvable dans l'URL
-     */
-    protected function getParametreUrl($nomParametre) {
-        if (isset($_GET[$nomParametre])) {
-            // Protection contre l'injection de code
-            $param = htmlentities($_GET[$nomParametre], ENT_QUOTES);
-            return $param;
-        }
-        else
-            throw new Exception("Paramètre '$nomParametre' absent de l'URL");
-    }
-    
-    /**
-     * Récupère un paramètre de la requête HTTP (recherche dans $_POST)
-     * 
-     * @param type $nomParametre Le nom du paramètre
-     * @return type La valeur du paramètre (string)
-     * @throws Exception Si le paramètre est introuvable dans la requête
-     */
-    protected function getParametreRequete($nomParametre) {
-        if (isset($_POST[$nomParametre])) {
-            // Protection contre l'injection de code
-            $param = htmlentities($_POST[$nomParametre], ENT_QUOTES);
-            return $param;
-        }
-        else
-            throw new Exception("Paramètre '$nomParametre' absent de la requête");
-    }
 }
