@@ -1,21 +1,22 @@
 <?php
 
+require_once 'Controleur.php';
 require_once 'Requete.php';
+require_once 'Vue.php';
 
 /*
- * Classe de routage des requêtes entrantes (contrôleur frontal)
+ * Classe de routage des requêtes entrantes.
  */
 
 class Routeur {
 
     /**
-     * Méthode principale du contrôleur frontal.
-     * Examine les paramètres de l'URL et exécute l'action à entreprendre 
+     * Méthode principale appelée par le contrôleur frontal
+     * Examine la requête et exécute l'action appropriée
      */
-    public function routerRequete() {
+    public function traiterRequete() {
         try {
-            $requete = new Requete();
-            $controleur = $this->creerControleur($requete);
+            $controleur = $this->creerControleur();
             $controleur->executerAction();
         }
         catch (Exception $e) {
@@ -23,19 +24,25 @@ class Routeur {
         }
     }
 
-    private function creerControleur(Requete $requete) {
-        $nomControleur = "Accueil";
-        if ($requete->existeParametre("controleur")) {
-            $nomControleur = $requete->getParametre("controleur");
+    private function creerControleur() {
+        $requete = new Requete($_GET);
+        
+        $controleur = "Accueil";
+        if ($requete->existeParametre('controleur')) {
+            $controleur = $requete->getParametre('controleur');
         }
-        $classeControleur = "Controleur" . $nomControleur;
+        $action = "index";  // Action par défaut
+        if ($requete->existeParametre('action')) {
+            $action = $requete->getParametre('action');
+        }
+        $classeControleur = "Controleur" . $controleur;
         $fichierControleur = "Controleur/" . $classeControleur . ".php";
         if (file_exists($fichierControleur)) {
             require($fichierControleur);
-            return new $classeControleur($requete);
+            return new $classeControleur($action, $requete);
         }
         else {
-            throw new Exception("Fichier $fichierControleur introuvable");
+            throw new Exception("Erreur interne : fichier '$fichierControleur' introuvable");
         }
     }
 
@@ -45,8 +52,8 @@ class Routeur {
      * @param type $exception L'exception qui s'est produite
      */
     private function gererErreur(Exception $exception) {
-        $msgErreur = $exception->getMessage();
-        require 'Vue/erreur.php';
+        $vueErreur = new Vue('erreur');
+        $vueErreur->generer(array('msgErreur' => $exception->getMessage()));
     }
 
 }

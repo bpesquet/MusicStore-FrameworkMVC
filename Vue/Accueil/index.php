@@ -1,4 +1,115 @@
-<!doctype html>
-<html>
-    <body>Bonjour <?= $nom ?> !</body>
-</html>
+<?php $titre = 'Accueil' ?>
+
+<?php ob_start() ?>
+<!-- Menu de navigation par genre -->
+<aside class="span2">
+    <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+            <li class="nav-header">Genres musicaux</li>
+            <li><a href="#">Classique</a></li>
+            <li><a href="#">Disco</a></li>
+            <li><a href="#">Rock</a></li>
+            <li><a href="#">Soul</a></li>
+        </ul>
+    </div><!--/.well -->
+</aside>
+
+<!-- Partie principale de la page d'accueil -->
+<div class="span10">
+    <div class="row-fluid">
+        <div class="span5 offset2">
+            <img style="float:right; border-radius: 7px; border:4px solid white; box-shadow: 1px 1px 10px #555;" src="Contenu/Images/BannerFIB.png" />
+        </div>
+        <div class="span5">
+            <h2>Music Is Life <i class="icon-headphones"></i><br> <small>Bienvenue sur le PHP Music Store !</small></h2>
+        </div>
+    </div>
+
+    <section>
+        <h3>Nouveautés <small>Les dernières sorties musicales</small></h3>
+        <ul class="thumbnails">
+            <li class="span2">
+                <a href="#" class="thumbnail">
+                    <img src="Contenu/Images/placeholder.gif" alt="">
+                </a>
+                <p class="text-center"><a href="#">Back In Black</a></p>
+            </li>
+            <li class="span2">
+                <a href="#" class="thumbnail">
+                    <img src="Contenu/Images/placeholder.gif" alt="">
+                </a>
+                <p class="text-center"><a href="#">Back In Black</a></p>
+            </li>
+            <li class="span2">
+                <a href="#" class="thumbnail">
+                    <img src="Contenu/Images/placeholder.gif" alt="">
+                </a>
+                <p class="text-center"><a href="#">Back In Black</a></p>
+            </li>
+            <li class="span2">
+                <a href="#" class="thumbnail">
+                    <img src="Contenu/Images/placeholder.gif" alt="">
+                </a>
+                <p class="text-center"><a href="#">Back In Black</a></p>
+            </li>
+            <li class="span2">
+                <a href="#" class="thumbnail">
+                    <img src="Contenu/Images/placeholder.gif" alt="">
+                </a>
+                <p class="text-center"><a href="#">Back In Black</a></p>
+            </li>
+            <li class="span2">
+                <a href="#" class="thumbnail">
+                    <img src="Contenu/Images/placeholder.gif" alt="">
+                </a>
+                <p class="text-center"><a href="#">Back In Black</a></p>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Meilleures ventes <small>Nos albums les plus populaires</small></h3>
+        <ul class="thumbnails">
+            <li class="span2">
+                <a href="#" class="thumbnail">
+                    <img src="Contenu/Images/placeholder.gif" alt="">
+                </a>
+                <p class="text-center"><a href="#">Back In Black</a></p>
+            </li>
+            <li class="span2">
+                <a href="#" class="thumbnail">
+                    <img src="Contenu/Images/placeholder.gif" alt="">
+                </a>
+                <p class="text-center"><a href="#">Back In Black</a></p>
+            </li>
+            <li class="span2">
+                <a href="#" class="thumbnail">
+                    <img src="Contenu/Images/placeholder.gif" alt="">
+                </a>
+                <p class="text-center"><a href="#">Back In Black</a></p>
+            </li>
+            <li class="span2">
+                <a href="#" class="thumbnail">
+                    <img src="Contenu/Images/placeholder.gif" alt="">
+                </a>
+                <p class="text-center"><a href="#">Back In Black</a></p>
+            </li>
+            <li class="span2">
+                <a href="#" class="thumbnail">
+                    <img src="Contenu/Images/placeholder.gif" alt="">
+                </a>
+                <p class="text-center"><a href="#">Back In Black</a></p>
+            </li>
+            <li class="span2">
+                <a href="#" class="thumbnail">
+                    <img src="Contenu/Images/placeholder.gif" alt="">
+                </a>
+                <p class="text-center"><a href="#">Back In Black</a></p>
+            </li>
+        </ul>
+    </section>
+</div>
+<?php $contenu = ob_get_clean() ?>
+
+<?php require 'Vue/gabarit.php' ?>
+
