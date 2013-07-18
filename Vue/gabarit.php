@@ -4,7 +4,7 @@
         <meta charset="utf-8">
 
         <base href="<?= $racineWeb ?>" >
-        
+
         <!-- Feuilles de style -->
         <link rel="stylesheet" href="Librairies/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="Librairies/font-awesome/css/font-awesome.min.css" >
@@ -12,7 +12,7 @@
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="Contenu/Images/favicon.png">
-        
+
         <!-- Titre (dynamique) -->
         <title>The PHP Music Store - <?= $titre ?></title>
     </head>
@@ -21,7 +21,7 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
-                    <a class="brand" href="#"><i class="icon-headphones"></i> PHP Music Store</a>
+                    <a class="brand" href=""><i class="icon-headphones"></i> PHP Music Store</a>
                     <form class="navbar-search">
                         <input type="text" class="search-query" placeholder="Rechercher...">
                     </form>
@@ -45,13 +45,7 @@
         </div>
 
         <div class="container-fluid">
-            <!-- Fil d'Ariane -->
-            <ul class="breadcrumb">
-                <li><i class="icon-home"></i> <a href="#">Accueil</a> <span class="divider">/</span></li>
-                <li><i class="icon-music"></i> <a href="#">Rock</a> <span class="divider">/</span></li>
-                <li><i class="icon-male"></i> <a href="#">The White Stripes</a> <span class="divider">/</span></li>
-                <li class="active"><i class="icon-volume-up"></i> Get Behind Me Satan</li>
-            </ul>
+            <?php require 'Vue/Partielles/filAriane.php'; ?>
 
             <div class="row-fluid">
                 <!-- Contenu de la page (dynamique) -->

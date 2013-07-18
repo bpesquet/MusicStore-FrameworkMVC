@@ -19,41 +19,41 @@
     <section>
         <h3>Nouveautés <small>Les dernières sorties musicales</small></h3>
         <ul class="thumbnails">
-            <li class="span2">
-                <a href="#" class="thumbnail">
-                    <img src="Contenu/Images/placeholder.gif" alt="">
+            <li class="miniatureAlbum">
+                <a class="" href="#">
+                    <img src="Contenu/Images/placeholder.gif" alt="" />
+                    <span>Get Behind Me Satan</span>
                 </a>
-                <p class="text-center"><a href="#">Back In Black</a></p>
             </li>
-            <li class="span2">
-                <a href="#" class="thumbnail">
-                    <img src="Contenu/Images/placeholder.gif" alt="">
+            <li class="miniatureAlbum">
+                <a class="" href="#">
+                    <img src="Contenu/Images/placeholder.gif" alt="" />
+                    <span>Get Behind Me Satan</span>
                 </a>
-                <p class="text-center"><a href="#">Back In Black</a></p>
             </li>
-            <li class="span2">
-                <a href="#" class="thumbnail">
-                    <img src="Contenu/Images/placeholder.gif" alt="">
+            <li class="miniatureAlbum">
+                <a class="" href="#">
+                    <img src="Contenu/Images/placeholder.gif" alt="" />
+                    <span>Get Behind Me Satan</span>
                 </a>
-                <p class="text-center"><a href="#">Back In Black</a></p>
             </li>
-            <li class="span2">
-                <a href="#" class="thumbnail">
-                    <img src="Contenu/Images/placeholder.gif" alt="">
+            <li class="miniatureAlbum">
+                <a class="" href="#">
+                    <img src="Contenu/Images/placeholder.gif" alt="" />
+                    <span>Get Behind Me Satan</span>
                 </a>
-                <p class="text-center"><a href="#">Back In Black</a></p>
             </li>
-            <li class="span2">
-                <a href="#" class="thumbnail">
-                    <img src="Contenu/Images/placeholder.gif" alt="">
+            <li class="miniatureAlbum">
+                <a class="" href="#">
+                    <img src="Contenu/Images/placeholder.gif" alt="" />
+                    <span>Get Behind Me Satan</span>
                 </a>
-                <p class="text-center"><a href="#">Back In Black</a></p>
             </li>
-            <li class="span2">
-                <a href="#" class="thumbnail">
-                    <img src="Contenu/Images/placeholder.gif" alt="">
+            <li class="miniatureAlbum">
+                <a class="" href="#">
+                    <img src="Contenu/Images/placeholder.gif" alt="" />
+                    <span>Get Behind Me Satan</span>
                 </a>
-                <p class="text-center"><a href="#">Back In Black</a></p>
             </li>
         </ul>
     </section>
@@ -61,41 +61,47 @@
     <section>
         <h3>Meilleures ventes <small>Nos albums les plus populaires</small></h3>
         <ul class="thumbnails">
-            <li class="span2">
-                <a href="#" class="thumbnail">
-                    <img src="Contenu/Images/placeholder.gif" alt="">
+            <li class="miniatureAlbum">
+                <a class="" href="#">
+                    <img src="Contenu/Images/placeholder.gif" alt="" />
+                    <span>Get Behind Me Satan</span>
                 </a>
-                <p class="text-center"><a href="#">Back In Black</a></p>
             </li>
-            <li class="span2">
-                <a href="#" class="thumbnail">
-                    <img src="Contenu/Images/placeholder.gif" alt="">
+            <li class="miniatureAlbum">
+                <a class="" href="#">
+                    <img src="Contenu/Images/placeholder.gif" alt="" />
+                    <span>Get Behind Me Satan</span>
                 </a>
-                <p class="text-center"><a href="#">Back In Black</a></p>
             </li>
-            <li class="span2">
-                <a href="#" class="thumbnail">
-                    <img src="Contenu/Images/placeholder.gif" alt="">
+            <li class="miniatureAlbum">
+                <a class="" href="#">
+                    <img src="Contenu/Images/placeholder.gif" alt="" />
+                    <span>Get Behind Me Satan</span>
                 </a>
-                <p class="text-center"><a href="#">Back In Black</a></p>
             </li>
-            <li class="span2">
-                <a href="#" class="thumbnail">
-                    <img src="Contenu/Images/placeholder.gif" alt="">
+            <li class="miniatureAlbum">
+                <a class="" href="#">
+                    <img src="Contenu/Images/placeholder.gif" alt="" />
+                    <span>Get Behind Me Satan</span>
                 </a>
-                <p class="text-center"><a href="#">Back In Black</a></p>
             </li>
-            <li class="span2">
-                <a href="#" class="thumbnail">
-                    <img src="Contenu/Images/placeholder.gif" alt="">
+            <li class="miniatureAlbum">
+                <a class="" href="#">
+                    <img src="Contenu/Images/placeholder.gif" alt="" />
+                    <span>Get Behind Me Satan</span>
                 </a>
-                <p class="text-center"><a href="#">Back In Black</a></p>
             </li>
-            <li class="span2">
-                <a href="#" class="thumbnail">
-                    <img src="Contenu/Images/placeholder.gif" alt="">
+            <li class="miniatureAlbum">
+                <a class="" href="#">
+                    <img src="Contenu/Images/placeholder.gif" alt="" />
+                    <span>Get Behind Me Satan</span>
                 </a>
-                <p class="text-center"><a href="#">Back In Black</a></p>
+            </li>
+            <li class="miniatureAlbum">
+                <a class="" href="#">
+                    <img src="Contenu/Images/placeholder.gif" alt="" />
+                    <span>Get Behind Me Satan</span>
+                </a>
             </li>
         </ul>
     </section>

@@ -1,4 +1,4 @@
-<?php $titre = $nomGenre ?>
+<?php $titre = $artiste['nom'] ?>
 
 <?php ob_start() ?>
 <aside class="span2">
