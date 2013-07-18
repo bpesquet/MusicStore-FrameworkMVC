@@ -1,17 +1,15 @@
 <?php
 
+require_once 'Configuration.php';
 /**
- * Description of Vue
+ * Classe modélisant une vue
  *
  * @author Baptiste Pesquet
  */
 class Vue {
 
+    // Nom du fichier associé à la vue
     private $fichier;
-    
-    // Racine du site Web (chemin vers le site sur le serveur Web)
-    // Nécessaire pour les URI de type controleur/action/id
-    private $racineWeb;
 
     public function __construct($action, $controleur = "") {
         // Détermination du nom du fichier vue à partir de l'action et du constructeur
@@ -20,17 +18,22 @@ class Vue {
             $fichier = $fichier . $controleur . "/";
         }
         $this->fichier = $fichier . $action . ".php";
-
-        //TODO à configurer
-        $this->racineWeb = "/pesquet/MusicStore/";
     }
 
+    /**
+     * Génère la vue
+     * 
+     * @param type $donnees
+     * @throws Exception
+     */
     public function generer($donnees) {
         if (file_exists($this->fichier)) {
             // Rend les éléments du tableau $donnees accessibles dans la vue
             extract($donnees);
             // On définit une variable locale accessible par la vue pour la racine Web
-            $racineWeb = $this->racineWeb;
+            // Il s'agit du chemin vers le site sur le serveur Web
+            // Nécessaire pour les URI de type controleur/action/id
+            $racineWeb = Configuration::get("racineWeb");
             // Inclut le fichier vue, ce qui déclenche son affichage
             require $this->fichier;
         }

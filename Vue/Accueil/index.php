@@ -1,17 +1,8 @@
 <?php $titre = 'Accueil' ?>
 
 <?php ob_start() ?>
-<!-- Menu de navigation par genre -->
 <aside class="span2">
-    <div class="well sidebar-nav">
-        <ul class="nav nav-list">
-            <li class="nav-header">Genres musicaux</li>
-            <li><a href="#">Classique</a></li>
-            <li><a href="#">Disco</a></li>
-            <li><a href="#">Rock</a></li>
-            <li><a href="#">Soul</a></li>
-        </ul>
-    </div><!--/.well -->
+    <?php require 'Vue/Partielles/menuGenres.php'; ?>
 </aside>
 
 <!-- Partie principale de la page d'accueil -->
