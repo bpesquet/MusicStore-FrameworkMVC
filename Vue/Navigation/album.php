@@ -9,7 +9,7 @@
 <div class="span10">
     <h3><?= $album['nom'] ?></h3>
     <img src="Contenu/Images/placeholder_big.jpg" alt="" />
-    <h4>Artiste : <?= $nomArtiste ?></h4>
+    <h4>Artiste : <?= $album['nomArtiste'] ?></h4>
     <h4>Genre : <?= $nomGenre ?></h4>
     <a class="btn btn-primary"><i class="icon-shopping-cart icon-white"></i> Ajouter au panier</a>
 </div>

@@ -35,16 +35,16 @@ insert into T_GENRE(GEN_NOM) values ('Folk');
 
 insert into T_ARTISTE(ART_NOM) values ('The White Stripes');
 
-insert into T_ALBUM(ALB_NOM, ART_ID, GEN_ID) values ('Get Behind Me Satan', 1, 1);
-insert into T_ALBUM(ALB_NOM, ART_ID, GEN_ID) values ('Let It Bleed', 1, 1);
-insert into T_ALBUM(ALB_NOM, ART_ID, GEN_ID) values ('Mellon Collie And The Infinite Sadness', 1, 1);
-insert into T_ALBUM(ALB_NOM, ART_ID, GEN_ID) values ('Achtung Baby', 1, 1);
-insert into T_ALBUM(ALB_NOM, ART_ID, GEN_ID) values ('London Calling', 1, 1);
-insert into T_ALBUM(ALB_NOM, ART_ID, GEN_ID) values ('Bossanova', 1, 1);
-insert into T_ALBUM(ALB_NOM, ART_ID, GEN_ID) values ('Definitely Maybe', 1, 1);
-insert into T_ALBUM(ALB_NOM, ART_ID, GEN_ID) values ('Pacifc Ocean Blue', 1, 1);
-insert into T_ALBUM(ALB_NOM, ART_ID, GEN_ID) values ('The Beatles (White Album)', 1, 1);
-insert into T_ALBUM(ALB_NOM, ART_ID, GEN_ID) values ('Nebraska', 1, 1);
-insert into T_ALBUM(ALB_NOM, ART_ID, GEN_ID) values ('Ziggy Stardust', 1, 1);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Get Behind Me Satan', 1, 1);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Let It Bleed', 1, 1);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Mellon Collie And The Infinite Sadness', 1, 1);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Achtung Baby', 1, 1);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('London Calling', 1, 1);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Bossanova', 1, 1);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Definitely Maybe', 1, 1);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Pacifc Ocean Blue', 1, 1);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('The Beatles (White Album)', 1, 1);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Nebraska', 1, 1);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Ziggy Stardust', 1, 1);
 
 
