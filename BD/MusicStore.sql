@@ -34,17 +34,27 @@ insert into T_GENRE(GEN_NOM) values ('Country');
 insert into T_GENRE(GEN_NOM) values ('Folk');
 
 insert into T_ARTISTE(ART_NOM) values ('The White Stripes');
+insert into T_ARTISTE(ART_NOM) values ('The Rolling Stones');
+insert into T_ARTISTE(ART_NOM) values ('U2');
+insert into T_ARTISTE(ART_NOM) values ('Oasis');
+insert into T_ARTISTE(ART_NOM) values ('Dennis Wilson');
+insert into T_ARTISTE(ART_NOM) values ('The Smashing Pumpkins');
+insert into T_ARTISTE(ART_NOM) values ('The Clash');
+insert into T_ARTISTE(ART_NOM) values ('Pixies');
+insert into T_ARTISTE(ART_NOM) values ('The Beatles');
+insert into T_ARTISTE(ART_NOM) values ('Bruce Springsteen');
+insert into T_ARTISTE(ART_NOM) values ('David Bowie');
 
 insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Get Behind Me Satan', 1, 1);
-insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Let It Bleed', 1, 1);
-insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Mellon Collie And The Infinite Sadness', 1, 1);
-insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Achtung Baby', 1, 1);
-insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('London Calling', 1, 1);
-insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Bossanova', 1, 1);
-insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Definitely Maybe', 1, 1);
-insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Pacifc Ocean Blue', 1, 1);
-insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('The Beatles (White Album)', 1, 1);
-insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Nebraska', 1, 1);
-insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Ziggy Stardust', 1, 1);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Let It Bleed', 1, 2);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Mellon Collie And The Infinite Sadness', 1, 6);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Achtung Baby', 1, 3);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('London Calling', 1, 7);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Bossanova', 1, 8);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Definitely Maybe', 1, 4);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Pacifc Ocean Blue', 1, 5);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('The Beatles (White Album)', 1, 9);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Nebraska', 1, 10);
+insert into T_ALBUM(ALB_NOM, GEN_ID, ART_ID) values ('Ziggy Stardust', 1, 11);
 
 

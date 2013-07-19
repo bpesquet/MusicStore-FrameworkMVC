@@ -18,7 +18,7 @@ class ControleurAccueil extends Controleur {
     }
 
     public function index() {
-        $genres = $this->genre->getGenres(true);
+        $genres = $this->genre->getGenres();
 
         $this->genererVue(array('genres' => $genres));
     }

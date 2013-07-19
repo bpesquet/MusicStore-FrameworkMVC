@@ -1,9 +1,7 @@
 <!-- Menu de navigation par genre -->
 <div class="well sidebar-nav">
     <ul class="nav nav-list">
-        <li class="nav-header">
-            <a href="navigation">Genres Musicaux</a>
-        </li>
+        <li class="nav-header">Genres Musicaux</li>
         <?php foreach ($genres as $genre): ?>
             <?php if (isset($nomGenre) && ($nomGenre == $genre['nom'])) : ?>
                 <li class="active">

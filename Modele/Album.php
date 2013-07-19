@@ -8,11 +8,6 @@ require_once 'Framework/Modele.php';
  */
 class Album extends Modele {
 
-    public function getAlbums() {
-        $sql = "select ALB_ID as id, ALB_NOM as nom from T_ALBUM order by ALB_NOM";
-        return $this->executerRequete($sql);
-    }
-
     public function getAlbumsParGenre($idGenre) {
         $sql = "select ALB_ID as id, ALB_NOM as nom from T_ALBUM where GEN_ID=? order by ALB_NOM";
         return $this->executerRequete($sql, array($idGenre));
