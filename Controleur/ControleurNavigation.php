@@ -32,7 +32,7 @@ class ControleurNavigation extends Controleur {
             // Récupération des albums associés à un genre
             $idGenre = $this->requete->getParametre("id");
             $nomGenre = $this->genre->getGenre($idGenre)["nom"];
-            $albums = $this->album->getAlbumsParGenre($idGenre);
+            $albums = $this->album->getAlbumsGenre($idGenre);
         }
         $genres = $this->genre->getGenres();
 
@@ -40,6 +40,9 @@ class ControleurNavigation extends Controleur {
             'nomGenre' => $nomGenre, 'idGenre' => $idGenre));
     }
 
+    /**
+     * Détails sur un album
+     */
     public function album() {
         $album = null;
         $idGenre = null;

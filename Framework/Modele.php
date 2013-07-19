@@ -13,6 +13,13 @@ abstract class Modele {
     // Objet PDO d'accès à la BD
     private static $bdd;
 
+    /**
+     * Exécute une requête SQL
+     * 
+     * @param type $sql
+     * @param type $valeurs
+     * @return type
+     */
     protected function executerRequete($sql, $valeurs = null) {
         if ($valeurs == null) {
             $stmtResultats = self::getBdd()->query($sql);

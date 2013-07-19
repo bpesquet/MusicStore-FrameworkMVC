@@ -16,95 +16,20 @@
         </div>
     </div>
 
-    <section>
+    <div class="row-fluid">
         <h3>Nouveautés <small>Les dernières sorties musicales</small></h3>
         <ul class="thumbnails">
-            <li class="miniatureAlbum">
-                <a class="" href="#">
-                    <img src="Contenu/Images/placeholder.gif" alt="" />
-                    <span>Get Behind Me Satan</span>
-                </a>
-            </li>
-            <li class="miniatureAlbum">
-                <a class="" href="#">
-                    <img src="Contenu/Images/placeholder.gif" alt="" />
-                    <span>Get Behind Me Satan</span>
-                </a>
-            </li>
-            <li class="miniatureAlbum">
-                <a class="" href="#">
-                    <img src="Contenu/Images/placeholder.gif" alt="" />
-                    <span>Get Behind Me Satan</span>
-                </a>
-            </li>
-            <li class="miniatureAlbum">
-                <a class="" href="#">
-                    <img src="Contenu/Images/placeholder.gif" alt="" />
-                    <span>Get Behind Me Satan</span>
-                </a>
-            </li>
-            <li class="miniatureAlbum">
-                <a class="" href="#">
-                    <img src="Contenu/Images/placeholder.gif" alt="" />
-                    <span>Get Behind Me Satan</span>
-                </a>
-            </li>
-            <li class="miniatureAlbum">
-                <a class="" href="#">
-                    <img src="Contenu/Images/placeholder.gif" alt="" />
-                    <span>Get Behind Me Satan</span>
-                </a>
-            </li>
+            <?php foreach ($albumsRecents as $album): ?>
+                <li class="miniatureAlbum">
+                    <a href="navigation/album/<?= $album['id'] ?>" href="#">
+                        <img src="Contenu/Images/placeholder.gif" alt="" />
+                        <span><?= $album["nom"] ?></span>
+                    </a>
+                </li>
+            <?php endforeach; ?>
         </ul>
-    </section>
+    </div>
 
-    <section>
-        <h3>Meilleures ventes <small>Nos albums les plus populaires</small></h3>
-        <ul class="thumbnails">
-            <li class="miniatureAlbum">
-                <a class="" href="#">
-                    <img src="Contenu/Images/placeholder.gif" alt="" />
-                    <span>Get Behind Me Satan</span>
-                </a>
-            </li>
-            <li class="miniatureAlbum">
-                <a class="" href="#">
-                    <img src="Contenu/Images/placeholder.gif" alt="" />
-                    <span>Get Behind Me Satan</span>
-                </a>
-            </li>
-            <li class="miniatureAlbum">
-                <a class="" href="#">
-                    <img src="Contenu/Images/placeholder.gif" alt="" />
-                    <span>Get Behind Me Satan</span>
-                </a>
-            </li>
-            <li class="miniatureAlbum">
-                <a class="" href="#">
-                    <img src="Contenu/Images/placeholder.gif" alt="" />
-                    <span>Get Behind Me Satan</span>
-                </a>
-            </li>
-            <li class="miniatureAlbum">
-                <a class="" href="#">
-                    <img src="Contenu/Images/placeholder.gif" alt="" />
-                    <span>Get Behind Me Satan</span>
-                </a>
-            </li>
-            <li class="miniatureAlbum">
-                <a class="" href="#">
-                    <img src="Contenu/Images/placeholder.gif" alt="" />
-                    <span>Get Behind Me Satan</span>
-                </a>
-            </li>
-            <li class="miniatureAlbum">
-                <a class="" href="#">
-                    <img src="Contenu/Images/placeholder.gif" alt="" />
-                    <span>Get Behind Me Satan</span>
-                </a>
-            </li>
-        </ul>
-    </section>
 </div>
 <?php $contenu = ob_get_clean() ?>
 
