@@ -1,4 +1,4 @@
-# [MusicStore](https://github.com/pesquet/MusicStore)
+# [MusicStore](https://github.com/bpesquet/MusicStore)
 
 Projet support du cours sur l'architecture Web en PHP. Work in progress...
 
