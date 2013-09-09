@@ -1,12 +1,12 @@
 <?php $titre = $album['nom'] ?>
 
 <?php ob_start() ?>
-<aside class="span2">
+<aside class="col-md-3 col-sm-4 hidden-xs">
     <?php require 'Vue/Partielles/menuGenres.php'; ?>
 </aside>
 
 <!-- Partie principale de la page d'accueil -->
-<div class="span10">
+<div class="col-md-9 col-sm-8 col-xs-12">
     <?php if (isset($idAlbum)): ?>
         <h3><?= $album['nom'] ?></h3>
         <img src="Contenu/Images/placeholder_big.jpg" alt="" />

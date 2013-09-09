@@ -1,16 +1,22 @@
 <!-- Menu de navigation par genre -->
-<div class="well sidebar-nav">
-    <ul class="nav nav-list">
-        <li class="nav-header">Genres Musicaux</li>
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Genres musicaux</div>
+    <!-- List group -->
+    <div class="list-group">
         <?php foreach ($genres as $genre): ?>
-            <?php if (isset($nomGenre) && ($nomGenre == $genre['nom'])) : ?>
-                <li class="active">
-                <?php else: ?>
-                <li>
-                <?php endif; ?>
-                <a href="navigation/index/<?= $genre['id'] ?>"><?= $genre['nom'] ?> (<?= $genre['nbAlbums'] ?>)</a>
-            </li>
+            <?php
+            $classeLien = "list-group-item";
+            if (isset($nomGenre) && ($nomGenre == $genre['nom'])) {
+                $classeLien .= " active";
+            }
+            ?>
+            <a class="<?= $classeLien ?>" href="navigation/index/<?= $genre['id'] ?>">
+                <?= $genre['nom'] ?> <span class="badge pull-right"><?= $genre['nbAlbums'] ?></span>
+            </a>
         <?php endforeach; ?>
-        </li>
-    </ul>
-</div><!--/.well -->
+
+    </div>
+</div>
+

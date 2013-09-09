@@ -1,16 +1,10 @@
 <!-- Fil d'Ariane -->
 <ul class="breadcrumb">
     <li><i class="icon-home"></i> <a href="">Accueil</a> 
-        <?php if (isset($idGenre)): ?>
-            <span class="divider">/</span>
-        <?php endif; ?>
     </li>
     <?php if (isset($idGenre) && isset($nomGenre)): ?>
         <li><i class="icon-music"></i> 
             <a href="navigation/index/<?= $idGenre ?>"><?= $nomGenre ?></a>
-            <?php if (isset($idAlbum)): ?>
-                <span class="divider">/</span>
-            <?php endif; ?>
         </li>
         <?php if (isset($idAlbum) && isset($nomAlbum)): ?>
             <li class="active"><i class="icon-volume-up"></i> 

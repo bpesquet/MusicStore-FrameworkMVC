@@ -1,12 +1,12 @@
 <?php $titre = $nomGenre ?>
 
 <?php ob_start() ?>
-<aside class="span2">
+<aside class="col-md-3 col-sm-4 hidden-xs">
     <?php require 'Vue/Partielles/menuGenres.php'; ?>
 </aside>
 
 <!-- Partie principale de la page d'accueil -->
-<div class="span10">
+<div class="col-md-9 col-sm-8 col-xs-12">
     <?php if (isset($idGenre)): ?>
         <?php if ($albums->rowCount() > 0): ?>
             <?php if (isset($nomGenre)) : ?>
@@ -15,12 +15,21 @@
                 <h3>Liste des albums</h3>
             <?php endif; ?>
 
+            <div class="row">
+                <?php foreach ($albums as $album): ?>
+                    <div class="col-md-2 col-sm-3 col-xs-6">
+                        <a href="navigation/album/<?= $album['id'] ?>" class="thumbnail">
+                            <img src="Contenu/Images/placeholder.gif" title="<?= $album["nom"] ?>" />
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
             <ul class="thumbnails">
                 <?php foreach ($albums as $album): ?>
                     <li class="miniatureAlbum">
-                        <a href="navigation/album/<?= $album['id'] ?>" href="#">
-                            <img src="Contenu/Images/placeholder.gif" alt="" />
-                            <span><?= $album["nom"] ?></span>
+                        <a href="navigation/album/<?= $album['id'] ?>" class="thumbnail">
+                            <img src="Contenu/Images/placeholder.gif" title="<?= $album["nom"] ?>" />
                         </a>
                     </li>
                 <?php endforeach; ?>

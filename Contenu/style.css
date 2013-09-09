@@ -1,8 +1,8 @@
 body {
-    padding-top: 60px;
+    padding-top: 70px;
     padding-bottom: 40px;
 }
-
+/*
 footer {
     margin-top: 20px;
 }
@@ -12,13 +12,13 @@ footer {
 }
 
 @media (max-width: 980px) {
-    /* Enable use of floated navbar text */
+     Enable use of floated navbar text 
     .navbar-text.pull-right {
         float: none;
         padding-left: 5px;
         padding-right: 5px;
     }
-}
+}*/
 
 #lienIdentification {
     margin-left: 15px;
