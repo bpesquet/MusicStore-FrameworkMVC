@@ -36,7 +36,7 @@ class Routeur {
      */
     private function creerControleur() {
         // Grâce à la redirection, toutes les URL entrantes sont du type :
-        // index.php?controleur=XXX&action=YYY=id=ZZZ
+        // index.php?controleur=XXX&action=YYY&id=ZZZ
         // $_GET contient (même en cas de requête POST) les paramètres de l'URL
         $requete = new Requete($_GET);
 
