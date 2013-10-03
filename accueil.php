@@ -1,3 +1,10 @@
+<?php
+// Accès aux données
+$bdd = new PDO('mysql:host=localhost;dbname=musicstore;charset=utf8', 'root', '');
+$genres = $bdd->query("select G.GEN_ID as id, GEN_NOM as nom, count(ALB_ID) AS nbAlbums " .
+        "from T_GENRE G left join T_ALBUM A on G.GEN_ID=A.GEN_ID group by G.GEN_ID order by GEN_NOM");
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,27 +13,25 @@
 
         <!-- Feuilles de style -->
         <link rel="stylesheet" href="Librairies/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="Librairies/font-awesome/css/font-awesome.min.css" >
         <link rel="stylesheet" href="Contenu/style.css">
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="Contenu/Images/favicon.png">
 
         <!-- Titre -->
-        <title>Get Behind Me Satan - The PHP Music Store</title>
+        <title>The PHP Music Store</title>
     </head>
     <body>
         <!-- Barre de navigation en haut de la page -->
         <div class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Lien de retour à la page d'accueil -->
-            <a class="navbar-brand" href="accueil.html"><span class="glyphicon glyphicon-headphones"></span> PHP Music Store</a>
+            <a class="navbar-brand" href=""><span class="glyphicon glyphicon-headphones"></span> PHP Music Store</a>
         </div>
 
         <div class="container">
             <ul class="breadcrumb">
-                <li><span class="glyphicon glyphicon-home"></span> <a href="accueil.html">Accueil</a></li>
-                <li><span class="glyphicon glyphicon-music"></span> <a href="genre.html">Pop/Rock</a></li>
-                <li><span class="glyphicon glyphicon-volume-up"></span> Get Behind Me Satan</li>
+                <li><span class="glyphicon glyphicon-home"></span> <a href="">Accueil</a> 
+                </li>
             </ul>
 
             <div class="row">
@@ -36,15 +41,11 @@
                         <div class="panel-heading">Genres musicaux</div>
                         <!-- List group -->
                         <div class="list-group">
-                            <a class="list-group-item" href="genre.html">
-                                Disco <span class="badge pull-right">3</span>
-                            </a>
-                            <a class="list-group-item" href="genre.html">
-                                Electro <span class="badge pull-right">2</span>
-                            </a>
-                            <a class="list-group-item active" href="genre.html">
-                                Pop/Rock <span class="badge pull-right">5</span>
-                            </a>
+                            <?php foreach ($genres as $genre): ?>
+                                <a class="list-group-item" href="genre.php?id=<?= $genre['id'] ?>">
+                                    <?= $genre['nom'] ?> <span class="badge pull-right"><?= $genre['nbAlbums'] ?></span>
+                                </a>                              
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </nav>
@@ -52,11 +53,11 @@
                 <!-- Partie principale de la page d'accueil -->
                 <div class="col-md-9 col-sm-8">
                     <div class="row">
-                        <div class="col-xs-12">
-                            <h3>Get Behind Me Satan</h3>
-                            <img class="albumImage img-responsive" id="imgAccueil" src="Contenu/Images/Albums/gbms.jpg" title="Image non disponible" />
-                            <h4>Artiste : The White Stripes</h4>
-                            <a class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Ajouter au panier</a>
+                        <div class="col-md-6">
+                            <img class="img-responsive" id="imgAccueil" src="Contenu/Images/BannerFIB.png" />
+                        </div>
+                        <div class="col-md-6">
+                            <h2>Music Is Life <span class="glyphicon glyphicon-headphones"></span><br> <small>Bienvenue sur le PHP Music Store !</small></h2>
                         </div>
                     </div>
                 </div>
