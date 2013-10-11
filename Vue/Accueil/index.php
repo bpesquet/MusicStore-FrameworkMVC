@@ -11,7 +11,7 @@
             <!-- List group -->
             <div class="list-group">
                 <?php foreach ($genres as $genre): ?>
-                    <a class="list-group-item" href="genre.php?id=<?= $genre['id'] ?>">
+                    <a class="list-group-item" href="#">
                         <?= $genre['nom'] ?> <span class="badge pull-right"><?= $genre['nbAlbums'] ?></span>
                     </a>                              
                 <?php endforeach; ?>
