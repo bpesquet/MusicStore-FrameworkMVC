@@ -12,7 +12,7 @@
         <link rel="shortcut icon" href="Contenu/Images/favicon.png">
 
         <!-- Titre -->
-        <title><?= $titre ?></title>
+        <title>PHP Music Store - <?= $titre ?></title>
     </head>
     <body>
         <!-- Barre de navigation en haut de la page -->

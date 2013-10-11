@@ -1,3 +1,5 @@
+<?php $this->titre = "Accueil"; ?>
+
 <ul class="breadcrumb">
     <li><span class="glyphicon glyphicon-home"></span> <a href="">Accueil</a> 
     </li>
