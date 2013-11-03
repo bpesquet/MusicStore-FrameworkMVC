@@ -1,49 +1,49 @@
 <?php
 
 require_once 'Framework/Controleur.php';
-
 require_once 'Modele/Genre.php';
 require_once 'Modele/Album.php';
-/**
- * Contrôleur de la page d'accueil
- * 
- * @author Baptiste Pesquet
- */
-class ControleurNavigation extends Controleur {
 
+class ControleurNavigation extends Controleur
+{
     private $genre;
     private $album;
 
-    public function __construct($action, Requete $requete) {
-        parent::__construct($action, $requete);
-
+    public function __construct()
+    {
         $this->genre = new Genre();
         $this->album = new Album();
     }
 
-    /**
-     * Action par défaut : navigation par genre musical
-     */
-    public function index() {
+    public function index()
+    {
+        $genres = $this->genre->getGenres();
+        $this->genererVue(array('genres' => $genres), "genre");
+    }
+    
+    // navigation par genre musical
+    public function genre()
+    {
         $idGenre = null;
-        $nomGenre = null;
+        $genreSelectionne = null;
         $albums = null;
         if ($this->requete->existeParametre("id")) {
             // Récupération des albums associés à un genre
             $idGenre = $this->requete->getParametre("id");
-            $nomGenre = $this->genre->getGenre($idGenre)["nom"];
-            $albums = $this->album->getAlbumsGenre($idGenre);
+            $genreSelectionne = $this->genre->getGenre($idGenre);
+            $albums = $this->album->getAlbumsParGenre($idGenre);
         }
         $genres = $this->genre->getGenres();
 
         $this->genererVue(array('albums' => $albums, 'genres' => $genres,
-            'nomGenre' => $nomGenre, 'idGenre' => $idGenre));
+            'genreSelectionne' => $genreSelectionne));
     }
 
     /**
      * Détails sur un album
      */
-    public function album() {
+    public function album()
+    {
         $album = null;
         $idGenre = null;
         $nomGenre = null;

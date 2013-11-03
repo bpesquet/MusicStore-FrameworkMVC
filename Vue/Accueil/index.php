@@ -1,24 +1,12 @@
 <?php $this->titre = "Accueil"; ?>
 
 <ul class="breadcrumb">
-    <li><span class="glyphicon glyphicon-home"></span> <a href="">Accueil</a> 
-    </li>
+    <li><span class="glyphicon glyphicon-home"></span> <a href="">Accueil</a></li>
 </ul>
 
 <div class="row">
     <nav class="col-md-3 col-sm-4">
-        <div class="panel panel-default">
-            <!-- Default panel contents -->
-            <div class="panel-heading">Genres musicaux</div>
-            <!-- List group -->
-            <div class="list-group">
-                <?php foreach ($genres as $genre): ?>
-                    <a class="list-group-item" href="#">
-                        <?= $genre['nom'] ?> <span class="badge pull-right"><?= $genre['nbAlbums'] ?></span>
-                    </a>                              
-                <?php endforeach; ?>
-            </div>
-        </div>
+        <?php require 'Vue/_Commun/menuGenres.php'; ?>
     </nav>
 
     <!-- Partie principale de la page d'accueil -->
