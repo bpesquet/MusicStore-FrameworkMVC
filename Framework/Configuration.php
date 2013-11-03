@@ -1,25 +1,26 @@
 <?php
 
 /**
- * Classe de gestion des paramètres de configuration
- * 
- * Inspirée du SimpleFramework de F. Guillot
+ * Classe de gestion des paramètres de configuration.
+ * Inspirée du SimpleFramework de Frédéric Guillot
  * (https://github.com/fguillot/simpleFramework)
  *
  * @author Baptiste Pesquet
  */
-class Configuration {
-
+class Configuration
+{
+    /** Tableau des paramètres de configuration */
     private static $parametres;
 
     /**
      * Renvoie la valeur d'un paramètre de configuration
      * 
-     * @param type $nom
-     * @param type $valeurParDefaut
-     * @return type
+     * @param string $nom Nom du paramètre
+     * @param string $valeurParDefaut Valeur à renvoyer par défaut
+     * @return string Valeur du paramètre
      */
-    public static function get($nom, $valeurParDefaut = null) {
+    public static function get($nom, $valeurParDefaut = null)
+    {
         if (isset(self::getParametres()[$nom])) {
             $valeur = self::getParametres()[$nom];
         }
@@ -30,19 +31,21 @@ class Configuration {
     }
 
     /**
-     * Renvoie le tableau des paramètres en le chargeant au besoin
+     * Renvoie le tableau des paramètres en le chargeant au besoin depuis un fichier de configuration.
+     * Les fichiers de configuration recherchés sont Config/dev.ini et Config/prod.ini (dans cet ordre)
      * 
-     * @return type
-     * @throws Exception
+     * @return array Tableau des paramètres
+     * @throws Exception Si aucun fichier de configuration n'est trouvé
      */
-    private static function getParametres() {
+    private static function getParametres()
+    {
         if (self::$parametres == null) {
-            $cheminFichier = "Config/prod.ini";
+            $cheminFichier = "Config/dev.ini";
             if (!file_exists($cheminFichier)) {
-                $cheminFichier = "Config/dev.ini";
+                $cheminFichier = "Config/prod.ini";
             }
             if (!file_exists($cheminFichier)) {
-                throw new Exception("Erreur interne : aucun fichier de configuration trouvé");
+                throw new Exception("Aucun fichier de configuration trouvé");
             }
             else {
                 self::$parametres = parse_ini_file($cheminFichier);

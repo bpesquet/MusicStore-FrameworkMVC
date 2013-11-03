@@ -1,9 +1,5 @@
-<?php $titre = 'Erreur !' ?>
+<?php $this->titre = "Erreur !"; ?>
 
-<?php ob_start() ?>
 <div class="alert alert-danger">
-    <?= $msgErreur ?>
+    <?= $this->nettoyer($msgErreur) ?>
 </div>
-<?php $contenu = ob_get_clean() ?>
-
-<?php require 'gabarit.php' ?>

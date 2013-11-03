@@ -1,44 +1,65 @@
 <?php
 
-/*
- * Classe modélisant une requête HTTP entrante
+require_once 'Session.php';
+
+/**
+ * Classe modélisant une requête HTTP entrante.
  * 
  * @author Baptiste Pesquet
  */
-class Requete {
-
-    // paramètres de la requête
+class Requete
+{
+    /** Tableau des paramètres de la requête */
     private $parametres;
 
-    public function __construct($parametres) {
+    /** Objet session associé à la requête */
+    private $session;
+
+    /**
+     * Constructeur
+     * 
+     * @param array $parametres Paramètres de la requête
+     */
+    public function __construct($parametres)
+    {
         $this->parametres = $parametres;
+        $this->session = new Session();
+    }
+
+    /**
+     * Renvoie l'objet session associé à la requête
+     * 
+     * @return Session Objet session
+     */
+    public function getSession()
+    {
+        return $this->session;
     }
 
     /**
      * Renvoie vrai si le paramètre existe dans la requête
      * 
-     * @param type $nom
-     * @return type
+     * @param string $nom Nom du paramètre
+     * @return bool Vrai si le paramètre existe et sa valeur n'est pas vide 
      */
-    public function existeParametre($nom) {
+    public function existeParametre($nom)
+    {
         return (isset($this->parametres[$nom]) && $this->parametres[$nom] != "");
     }
 
     /**
      * Renvoie la valeur du paramètre demandé
      * 
-     * @param type $nom
-     * @return type
-     * @throws Exception
+     * @param string $nom Nom d paramètre
+     * @return string Valeur du paramètre
+     * @throws Exception Si le paramètre n'existe pas dans la requête
      */
-    public function getParametre($nom) {
+    public function getParametre($nom)
+    {
         if ($this->existeParametre($nom)) {
-            // Protection contre l'injection de code JavaScript
-            $param = htmlentities($this->parametres[$nom], ENT_QUOTES);
-            return $param;
+            return $this->parametres[$nom];
         }
         else {
-            // Paramètre absent de la requête
             throw new Exception("Paramètre '$nom' absent de la requête");
         }
     }

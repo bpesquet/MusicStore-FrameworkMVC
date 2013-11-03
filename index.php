@@ -5,5 +5,5 @@
 require 'Framework/Routeur.php';
 
 $routeur = new Routeur();
-$routeur->traiterRequete();
+$routeur->routerRequete();
 
