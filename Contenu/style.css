@@ -6,3 +6,9 @@ body {
 footer {
     margin-top: 20px;
 }
+
+#imgAccueil, #imgAlbum {
+    border-radius: 7px; 
+    border:4px solid white; 
+    box-shadow: 1px 1px 10px #555;
+}
