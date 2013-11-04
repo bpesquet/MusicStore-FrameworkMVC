@@ -11,7 +11,7 @@
                 $estSelectionne = true;
             }
             ?>
-            <a class="list-group-item <?= $estSelectionne ? 'active' : '' ?>" href="navigation/genre/<?= $this->nettoyer($genre['id']) ?>">
+            <a class="list-group-item <?= $estSelectionne ? 'active' : '' ?>" href="navigation/index/<?= $this->nettoyer($genre['id']) ?>">
                 <?= $this->nettoyer($genre['nom']) ?> <span class="badge pull-right"><?= $this->nettoyer($genre['nbAlbums']) ?></span>
             </a>                              
         <?php endforeach; ?>

@@ -6,7 +6,7 @@
 
 <div class="row">
     <nav class="col-md-3 col-sm-4">
-        <?php require 'Vue/_Commun/menuGenres.php'; ?>
+        <?php require 'Vue/_Commun/menuNavigation.php'; ?>
     </nav>
 
     <!-- Partie principale de la page d'accueil -->

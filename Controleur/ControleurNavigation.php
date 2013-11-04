@@ -15,16 +15,9 @@ class ControleurNavigation extends Controleur
         $this->album = new Album();
     }
 
+    // navigation par genre musical
     public function index()
     {
-        $genres = $this->genre->getGenres();
-        $this->genererVue(array('genres' => $genres), "genre");
-    }
-    
-    // navigation par genre musical
-    public function genre()
-    {
-        $idGenre = null;
         $genreSelectionne = null;
         $albums = null;
         if ($this->requete->existeParametre("id")) {
