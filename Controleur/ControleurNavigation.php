@@ -39,29 +39,4 @@ class ControleurNavigation extends Controleur
             'genreSelectionne' => $genreSelectionne));
     }
 
-    /**
-     * Détails sur un album
-     */
-    public function album()
-    {
-        $album = null;
-        $idGenre = null;
-        $nomGenre = null;
-        $idAlbum = null;
-        $nomAlbum = null;
-        if ($this->requete->existeParametre("id")) {
-            $idAlbum = $this->requete->getParametre("id");
-            $album = $this->album->getAlbum($idAlbum);
-            $idGenre = $album['idGenre'];
-            $nomGenre = $album['nomGenre'];
-            $idAlbum = $album['id'];
-            $nomAlbum = $album['nom'];
-        }
-        $genres = $this->genre->getGenres();
-
-        $this->genererVue(array('album' => $album, 'genres' => $genres,
-            'nomGenre' => $nomGenre, 'idGenre' => $idGenre,
-            'nomAlbum' => $nomAlbum, 'idAlbum' => $idAlbum));
-    }
-
 }
