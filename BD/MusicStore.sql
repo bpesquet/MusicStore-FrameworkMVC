@@ -18,6 +18,7 @@ create table T_ALBUM (
   ALB_ID integer primary key auto_increment,
   ALB_NOM varchar(100) not null,
   ALB_DATE date not null,
+  ALB_IMAGE varchar(50),
   GEN_ID integer not null,
   constraint fk_alb_gen foreign key(GEN_ID) references T_GENRE(GEN_ID),
   ART_ID integer not null,
@@ -46,16 +47,16 @@ insert into T_ARTISTE(ART_NOM) values ('The Beatles');
 insert into T_ARTISTE(ART_NOM) values ('Bruce Springsteen');
 insert into T_ARTISTE(ART_NOM) values ('David Bowie');
 
-insert into T_ALBUM(ALB_NOM, ALB_DATE, GEN_ID, ART_ID) values ('Get Behind Me Satan', NOW(), 1, 1);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, GEN_ID, ART_ID) values ('Let It Bleed', NOW(), 1, 2);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, GEN_ID, ART_ID) values ('Mellon Collie And The Infinite Sadness', NOW(), 1, 6);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, GEN_ID, ART_ID) values ('Achtung Baby', NOW(), 1, 3);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, GEN_ID, ART_ID) values ('London Calling', NOW(), 1, 7);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, GEN_ID, ART_ID) values ('Bossanova', NOW(), 1, 8);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, GEN_ID, ART_ID) values ('Definitely Maybe', NOW(), 1, 4);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, GEN_ID, ART_ID) values ('Pacifc Ocean Blue', NOW(), 1, 5);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, GEN_ID, ART_ID) values ('The Beatles (White Album)', NOW(), 1, 9);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, GEN_ID, ART_ID) values ('Nebraska', NOW(), 1, 10);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, GEN_ID, ART_ID) values ('Ziggy Stardust', NOW(), 1, 11);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Get Behind Me Satan', NOW(), 'getbehindmesatan.jpg', 1, 1);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Let It Bleed', NOW(), 'letitbleed.jpg', 1, 2);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Mellon Collie And The Infinite Sadness', NOW(), 'melloncollie.jpg', 1, 6);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Achtung Baby', NOW(), 'achtungbaby.jpg', 1, 3);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('London Calling', NOW(), 'londoncalling.jpg', 1, 7);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Bossanova', NOW(), 'bossanova.jpg', 1, 8);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Definitely Maybe', NOW(), 'definitelymaybe.jpg', 1, 4);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Pacific Ocean Blue', NOW(), 'pacificoceanblue.jpg', 1, 5);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('The Beatles (White Album)', NOW(), 'thebeatles.jpg', 1, 9);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Nebraska', NOW(), 'nebraska.jpg', 1, 10);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Ziggy Stardust', NOW(), 'ziggystardust.jpg', 1, 11);
 
 

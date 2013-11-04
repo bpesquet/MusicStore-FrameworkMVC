@@ -26,7 +26,7 @@
                     <?php foreach ($albums as $album): ?>
                         <div class="col-md-2 col-sm-3 col-xs-6">
                             <a href="navigation/album/<?= $this->nettoyer($album['id']) ?>" class="thumbnail">
-                                <img src="Contenu/Images/placeholder.gif" title="<?= $this->nettoyer($album["nom"]) ?>" />
+                                <img src="Contenu/Images/Albums/<?= $this->nettoyer($album['image']) ?>" title="<?= $this->nettoyer($album["nom"]) ?>" />
                             </a>
                         </div>
                     <?php endforeach; ?>
