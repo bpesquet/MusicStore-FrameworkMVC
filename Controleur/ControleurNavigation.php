@@ -32,4 +32,19 @@ class ControleurNavigation extends Controleur
             'genreSelectionne' => $genreSelectionne));
     }
 
+    public function album()
+    {
+        if ($this->requete->existeParametre("id")) {
+            $idAlbum = $this->requete->getParametre("id");
+            $album = $this->album->getAlbum($idAlbum);
+            $idGenre = $album['idGenre'];
+            $genreSelectionne = $this->genre->getGenre($idGenre);
+            $genres = $this->genre->getGenres();
+            $this->genererVue(array('album' => $album, 'genres' => $genres,
+                'genreSelectionne' => $genreSelectionne));
+        }
+        else
+            throw new Exception("Action impossible : aucun album défini");
+    }
+
 }

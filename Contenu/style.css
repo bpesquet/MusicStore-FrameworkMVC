@@ -12,3 +12,7 @@ footer {
     border:4px solid white; 
     box-shadow: 1px 1px 10px #555;
 }
+
+#btnAjouter {
+    margin-top : 15px;
+}
