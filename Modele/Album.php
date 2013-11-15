@@ -14,7 +14,7 @@ class Album extends Modele
     public function getAlbum($id)
     {
         $sql = "select ALB_ID as id, ALB_NOM as nom, 
-                ART.ART_ID as idArtiste, ART_NOM as nomArtiste, ALB_IMAGE as image,
+                ART.ART_ID as idArtiste, ART_NOM as nomArtiste, ALB_IMAGE as image, ALB_DATE as date,
                 G.GEN_ID as idGenre, GEN_NOM as nomGenre 
                 from T_ALBUM A join T_ARTISTE ART on A.ART_ID=ART.ART_ID 
                 join T_GENRE G on A.GEN_ID=G.GEN_ID 
