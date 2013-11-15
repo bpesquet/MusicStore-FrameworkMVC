@@ -15,12 +15,15 @@
     </nav>
 
     <div class="col-md-9 col-sm-8">
-       <div class="row">
+        <div class="row">
             <div class="col-md-5 col-sm-7">
                 <img class="img-responsive" id="imgAlbum" src="Contenu/Images/Albums/<?= $this->nettoyer($album['image']) ?>" title="<?= $this->nettoyer($album["nom"]) ?>" />
             </div>
             <div class="col-md-7 col-sm-5">
-                <h2><?= $this->nettoyer($album['nom']) ?> <br><small><?= $this->nettoyer($album['nomArtiste']) ?> - <?= $this->nettoyer($album['date']) ?></small></h2>
+                <h2><?= $this->nettoyer($album['nom']) ?> 
+                    <br><small><?= $this->nettoyer($album['nomArtiste']) ?> - <?= $this->nettoyer($album['date']) ?></small>
+                    <br><small><?= $this->nettoyer($album['prix']) ?> euros</small>
+                </h2>
             </div>
         </div>
         <button class="btn btn-primary" id="btnAjouter">

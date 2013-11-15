@@ -19,6 +19,7 @@ create table T_ALBUM (
   ALB_NOM varchar(100) not null,
   ALB_DATE integer not null,
   ALB_IMAGE varchar(50),
+  ALB_PRIX decimal(3,2) not null,
   GEN_ID integer not null,
   constraint fk_alb_gen foreign key(GEN_ID) references T_GENRE(GEN_ID),
   ART_ID integer not null,
@@ -47,16 +48,16 @@ insert into T_ARTISTE(ART_NOM) values ('The Beatles');
 insert into T_ARTISTE(ART_NOM) values ('Bruce Springsteen');
 insert into T_ARTISTE(ART_NOM) values ('David Bowie');
 
-insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Get Behind Me Satan', 2005, 'getbehindmesatan.jpg', 1, 1);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Let It Bleed', 1969, 'letitbleed.jpg', 1, 2);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Mellon Collie And The Infinite Sadness', 1995, 'melloncollie.jpg', 1, 6);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Achtung Baby', 1991, 'achtungbaby.jpg', 1, 3);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('London Calling', 1979, 'londoncalling.jpg', 1, 7);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Bossanova', 1990, 'bossanova.jpg', 1, 8);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Definitely Maybe', 1994, 'definitelymaybe.jpg', 1, 4);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Pacific Ocean Blue', 1977, 'pacificoceanblue.jpg', 1, 5);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('The Beatles (White Album)', 1968, 'thebeatles.jpg', 1, 9);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Nebraska', 1982, 'nebraska.jpg', 1, 10);
-insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_IMAGE, GEN_ID, ART_ID) values ('Ziggy Stardust', 1972, 'ziggystardust.jpg', 1, 11);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) values ('Get Behind Me Satan', 2005, 9.90, 'getbehindmesatan.jpg', 1, 1);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) values ('Let It Bleed', 1969, 9.90, 'letitbleed.jpg', 1, 2);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) values ('Mellon Collie And The Infinite Sadness', 1995, 9.90, 'melloncollie.jpg', 1, 6);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) values ('Achtung Baby', 1991, 9.90, 'achtungbaby.jpg', 1, 3);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) values ('London Calling', 1979, 9.90, 'londoncalling.jpg', 1, 7);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) values ('Bossanova', 1990, 9.90, 'bossanova.jpg', 1, 8);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) values ('Definitely Maybe', 1994, 9.90, 'definitelymaybe.jpg', 1, 4);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) values ('Pacific Ocean Blue', 1977, 9.90, 'pacificoceanblue.jpg', 1, 5);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) values ('The Beatles (White Album)', 1968, 9.90, 'thebeatles.jpg', 1, 9);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) values ('Nebraska', 1982, 9.90, 'nebraska.jpg', 1, 10);
+insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) values ('Ziggy Stardust', 1972, 9.90, 'ziggystardust.jpg', 1, 11);
 
 
