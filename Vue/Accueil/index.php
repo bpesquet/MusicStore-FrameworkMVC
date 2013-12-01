@@ -1,5 +1,7 @@
 <?php $this->titre = "Accueil"; ?>
 
+<?php require 'Vue/_Commun/barreNavigation.php'; ?>
+
 <ul class="breadcrumb">
     <li><span class="glyphicon glyphicon-home"></span> <a href="">Accueil</a></li>
 </ul>

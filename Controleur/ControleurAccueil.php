@@ -14,7 +14,11 @@ class ControleurAccueil extends Controleur {
     // Affiche la page d'accueil
     public function index() {
         $genres = $this->genre->getGenres();
-        $this->genererVue(array('genres' => $genres));
+        $prenomClient = null;
+        if ($this->requete->getSession()->existeAttribut("prenomClient")) {
+            $prenomClient = $this->requete->getSession()->getAttribut("prenomClient");
+        }
+        $this->genererVue(array('genres' => $genres, 'prenomClient' => $prenomClient));
     }
 
 }

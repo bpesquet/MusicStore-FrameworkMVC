@@ -4,6 +4,8 @@
     <?php $this->titre = "Genres musicaux"; ?>
 <?php endif; ?>
 
+<?php require 'Vue/_Commun/barreNavigation.php'; ?>
+
 <ul class="breadcrumb">
     <li><span class="glyphicon glyphicon-home"></span> <a href="">Accueil</a></li>
     <?php if (isset($genreSelectionne)): ?>

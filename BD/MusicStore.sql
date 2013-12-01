@@ -1,5 +1,6 @@
 /* Testé sous MySQL 5.x */
 
+drop table if exists T_CLIENT;
 drop table if exists T_ALBUM;
 drop table if exists T_ARTISTE;
 drop table if exists T_GENRE;
@@ -24,6 +25,17 @@ create table T_ALBUM (
   constraint fk_alb_gen foreign key(GEN_ID) references T_GENRE(GEN_ID),
   ART_ID integer not null,
   constraint fk_alb_art foreign key(ART_ID) references T_ARTISTE(ART_ID)
+) ENGINE=INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+create table T_CLIENT (
+  CLI_ID integer primary key auto_increment,
+  CLI_NOM varchar(100) not null,
+  CLI_PRENOM varchar(100) not null,
+  CLI_ADRESSE varchar(200) not null,
+  CLI_CP varchar(5) not null,
+  CLI_VILLE varchar(100) not null,
+  CLI_COURRIEL varchar(100) not null unique,
+  CLI_MDP varchar(100) not null
 ) ENGINE=INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 insert into T_GENRE(GEN_NOM) values ('Pop/Rock');
@@ -60,4 +72,4 @@ insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) val
 insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) values ('Nebraska', 1982, 9.90, 'nebraska.jpg', 1, 10);
 insert into T_ALBUM(ALB_NOM, ALB_DATE, ALB_PRIX, ALB_IMAGE,  GEN_ID, ART_ID) values ('Ziggy Stardust', 1972, 9.90, 'ziggystardust.jpg', 1, 11);
 
-
+insert into T_CLIENT(CLI_NOM, CLI_PRENOM, CLI_ADRESSE, CLI_CP, CLI_VILLE, CLI_COURRIEL, CLI_MDP) values ('Diossy', 'Daisy', '1 rue des oiseaux', '69001', 'LYON', 'daisy@diossy.fr', '12345');
