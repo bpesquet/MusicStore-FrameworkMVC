@@ -35,8 +35,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-user"></span> Non connecté <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="connexion/">Se connecter</a></li>
-                        <li><a href="inscription/">S'inscrire</a></li>
+                        <li><a href="connexion/">S'identifier</a></li>
                     </ul>
                 </li>
             <?php endif; ?>

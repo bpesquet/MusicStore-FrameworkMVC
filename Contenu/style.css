@@ -21,3 +21,8 @@ footer {
     margin-left: 15px;
     margin-right: 15px;
 }
+
+/* Décale vers le bas le contenu des onglets */
+.nav-tabs {
+    margin-bottom: 20px;
+}
