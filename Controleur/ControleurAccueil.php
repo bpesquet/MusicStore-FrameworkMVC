@@ -1,9 +1,9 @@
 <?php
 
-require_once 'Framework/Controleur.php';
+require_once 'ControleurSite.php';
 require_once 'Modele/Genre.php';
 
-class ControleurAccueil extends Controleur {
+class ControleurAccueil extends ControleurSite {
 
     private $genre;
     
@@ -14,11 +14,7 @@ class ControleurAccueil extends Controleur {
     // Affiche la page d'accueil
     public function index() {
         $genres = $this->genre->getGenres();
-        $prenomClient = null;
-        if ($this->requete->getSession()->existeAttribut("prenomClient")) {
-            $prenomClient = $this->requete->getSession()->getAttribut("prenomClient");
-        }
-        $this->genererVue(array('genres' => $genres, 'prenomClient' => $prenomClient));
+        $this->genererVue(array('genres' => $genres));
     }
 
 }

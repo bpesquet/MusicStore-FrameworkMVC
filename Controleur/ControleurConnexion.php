@@ -29,14 +29,11 @@ class ControleurConnexion extends Controleur
             $mdp = $this->requete->getParametre("mdp");
             if ($this->client->connecter($courriel, $mdp)) {
                 $client = $this->client->getClient($courriel, $mdp);
-                $this->requete->getSession()->setAttribut("idClient",
-                        $client['idClient']);
-                $this->requete->getSession()->setAttribut("prenomClient",
-                        $client['prenom']);
+                $this->requete->getSession()->setAttribut("client", $client);
                 $this->rediriger("accueil");
             }
             else
-                $this->genererVue(array('msgErreur' => 'Courriel ou mot de passe incorrects'),
+                $this->genererVue(array('msgErreur' => 'Utilisateur inconnu'),
                         "index");
         }
         else
@@ -67,10 +64,7 @@ class ControleurConnexion extends Controleur
                     $ville, $courriel, $mdp);
 
             $client = $this->client->getClient($courriel, $mdp);
-            $this->requete->getSession()->setAttribut("idClient",
-                    $client['idClient']);
-            $this->requete->getSession()->setAttribut("prenomClient",
-                    $client['prenom']);
+            $this->requete->getSession()->setAttribut("client", $client);
             $this->rediriger("accueil");
         }
         else

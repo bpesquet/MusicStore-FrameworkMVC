@@ -1,10 +1,10 @@
 <?php
 
-require_once 'Framework/Controleur.php';
+require_once 'ControleurSite.php';
 require_once 'Modele/Genre.php';
 require_once 'Modele/Album.php';
 
-class ControleurNavigation extends Controleur
+class ControleurNavigation extends ControleurSite
 {
     private $genre;
     private $album;
