@@ -1,8 +1,8 @@
 <?php
 
-require_once 'ControleurSite.php';
+require_once 'ControleurPersonnalise.php';
 
-abstract class ControleurSecurise extends ControleurSite
+abstract class ControleurSecurise extends ControleurPersonnalise
 {
 
     public function executerAction($action)

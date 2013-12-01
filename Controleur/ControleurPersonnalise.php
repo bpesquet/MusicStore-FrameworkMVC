@@ -2,7 +2,7 @@
 
 require_once 'Framework/Controleur.php';
 
-abstract class ControleurSite extends Controleur
+abstract class ControleurPersonnalise extends Controleur
 {
 
     protected function genererVue($donneesVue = array(), $action = null)

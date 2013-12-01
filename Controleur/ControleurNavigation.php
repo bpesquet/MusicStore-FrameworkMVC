@@ -1,10 +1,10 @@
 <?php
 
-require_once 'ControleurSite.php';
+require_once 'ControleurPersonnalise.php';
 require_once 'Modele/Genre.php';
 require_once 'Modele/Album.php';
 
-class ControleurNavigation extends ControleurSite
+class ControleurNavigation extends ControleurPersonnalise
 {
     private $genre;
     private $album;

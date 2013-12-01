@@ -1,9 +1,9 @@
 <?php
 
-require_once 'ControleurSite.php';
+require_once 'ControleurPersonnalise.php';
 require_once 'Modele/Genre.php';
 
-class ControleurAccueil extends ControleurSite {
+class ControleurAccueil extends ControleurPersonnalise {
 
     private $genre;
     

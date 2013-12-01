@@ -28,12 +28,10 @@ class ControleurConnexion extends Controleur
             $courriel = $this->requete->getParametre("courriel");
             $mdp = $this->requete->getParametre("mdp");
             if ($this->client->connecter($courriel, $mdp)) {
-                $client = $this->client->getClient($courriel, $mdp);
-                $this->requete->getSession()->setAttribut("client", $client);
-                $this->rediriger("accueil");
+                $this->accueillirClient($courriel, $mdp);
             }
             else
-                $this->genererVue(array('msgErreur' => 'Utilisateur inconnu'),
+                $this->genererVue(array('msgErreur' => 'Client inconnu'),
                         "index");
         }
         else
@@ -62,13 +60,23 @@ class ControleurConnexion extends Controleur
 
             $this->client->ajouterClient($nom, $prenom, $adresse, $codePostal,
                     $ville, $courriel, $mdp);
-
-            $client = $this->client->getClient($courriel, $mdp);
-            $this->requete->getSession()->setAttribut("client", $client);
-            $this->rediriger("accueil");
+            $this->accueillirClient($courriel, $mdp);
         }
         else
             throw new Exception("Action impossible : tous les paramètres ne sont pas définis");
+    }
+
+    /**
+     * Enregistre un client connecté dans la session et redirige vers la page d'accueil
+     * 
+     * @param type $courriel
+     * @param type $mdp
+     */
+    private function accueillirClient($courriel, $mdp)
+    {
+        $client = $this->client->getClient($courriel, $mdp);
+        $this->requete->getSession()->setAttribut("client", $client);
+        $this->rediriger("accueil");
     }
 
 }
