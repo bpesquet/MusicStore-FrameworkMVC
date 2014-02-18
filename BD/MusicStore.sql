@@ -18,7 +18,7 @@ create table T_ARTISTE (
 create table T_ALBUM (
   ALB_ID integer primary key auto_increment,
   ALB_NOM varchar(100) not null,
-  ALB_DATE integer not null,
+  ALB_DATE date not null,
   ALB_IMAGE varchar(50),
   ALB_PRIX decimal(3,2) not null,
   GEN_ID integer not null,
