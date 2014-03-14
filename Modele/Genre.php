@@ -3,13 +3,17 @@
 require_once 'Framework/Modele.php';
 
 /**
- * Fournit les services d'accès aux genres musicaux
+ * Services liés aux genres musicaux
  *
  * @author Baptiste Pesquet
  */
 class Genre extends Modele
 {
-
+    /**
+     * Renvoie la liste de tous les genres
+     * 
+     * @return type
+     */
     public function getGenres()
     {
         $sql = "select G.GEN_ID as id, GEN_NOM as nom, count(ALB_ID) AS nbAlbums " .
@@ -17,6 +21,13 @@ class Genre extends Modele
         return $this->executerRequete($sql);
     }
 
+    /**
+     * Renvoie les infos sur un genre
+     * 
+     * @param type $id
+     * @return type
+     * @throws Exception
+     */
     public function getGenre($id)
     {
         $sql = "select GEN_ID as id, GEN_NOM as nom from T_GENRE where GEN_ID=?";
