@@ -35,7 +35,7 @@ $this->titre = "Contenu du panier";
         </table>
     </div>
     <a href="#" class="btn btn-primary disabled" id="btnAjouter">
-        <span class="glyphicon glyphicon-ok"></span> Valider votre achat
+        <span class="glyphicon glyphicon-ok"></span> Valider vos achats
     </a>
 <?php else: ?>
     <div class="alert alert-info">Votre panier est vide.</div>

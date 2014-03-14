@@ -35,7 +35,7 @@ class ControleurPanier extends ControleurSecurise
             $idAlbum = $this->requete->getParametre("id");
             $client = $this->requete->getSession()->getAttribut("client");
             $idClient = $client['idClient'];
-            $this->panier->ajouterArticle($idClient, $idAlbum);
+            $this->panier->ajouterAlbum($idClient, $idAlbum);
             $this->executerAction("index");
         }
         else

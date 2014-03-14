@@ -39,7 +39,7 @@ create table T_CLIENT (
   CLI_MDP varchar(100) not null
 ) ENGINE=INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-create table T_ARTICLEPANIER (
+create table T_ARTICLE_PANIER (
   ARTPAN_ID integer primary key auto_increment,
   ALB_ID integer not null,
   CLI_ID integer not null,
