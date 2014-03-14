@@ -2,15 +2,33 @@
 
 require_once 'Framework/Modele.php';
 
+/**
+ * Services liés aux albums
+ * 
+ * @author Baptiste Pesquet
+ */
 class Album extends Modele
 {
 
+    /**
+     * Renvoie la liste des albums associés à un genre
+     * 
+     * @param type $idGenre
+     * @return type
+     */
     public function getAlbumsParGenre($idGenre)
     {
         $sql = "select ALB_ID as id, ALB_NOM as nom, ALB_IMAGE as image from T_ALBUM where GEN_ID=? order by ALB_NOM";
         return $this->executerRequete($sql, array($idGenre));
     }
 
+    /**
+     * Renvoie un album
+     * 
+     * @param type $id
+     * @return type
+     * @throws Exception
+     */
     public function getAlbum($id)
     {
         $sql = "select ALB_ID as id, ALB_NOM as nom, 

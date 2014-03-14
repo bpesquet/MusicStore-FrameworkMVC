@@ -3,6 +3,11 @@
 require_once 'ControleurSecurise.php';
 require_once 'Modele/Client.php';
 
+/**
+ * Contrôleur des actions liées au client
+ * 
+ * @author Baptiste Pesquet
+ */
 class ControleurClient extends ControleurSecurise
 {
     private $client;
@@ -12,11 +17,19 @@ class ControleurClient extends ControleurSecurise
         $this->client = new Client();
     }
 
+    /**
+     * Affiche la page de modification des infos client
+     */
     public function index()
     {
         $this->genererVue();
     }
 
+    /**
+     * Modifie les infos client
+     * 
+     * @throws Exception S'il manque des infos clients
+     */
     public function modifier()
     {
         if ($this->requete->existeParametre("nom") && $this->requete->existeParametre("prenom") &&

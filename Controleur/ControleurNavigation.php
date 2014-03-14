@@ -4,6 +4,11 @@ require_once 'ControleurPersonnalise.php';
 require_once 'Modele/Genre.php';
 require_once 'Modele/Album.php';
 
+/**
+ * Contrôleur des actions de navigation sur le site
+ * 
+ * @author Baptiste Pesquet
+ */
 class ControleurNavigation extends ControleurPersonnalise
 {
     private $genre;
@@ -15,7 +20,9 @@ class ControleurNavigation extends ControleurPersonnalise
         $this->album = new Album();
     }
 
-    // navigation par genre musical
+    /**
+     * Affiche le genre musical sélectionné
+     */
     public function index()
     {
         $genreSelectionne = null;
@@ -32,6 +39,11 @@ class ControleurNavigation extends ControleurPersonnalise
             'genreSelectionne' => $genreSelectionne));
     }
 
+    /**
+     * Affiche les détails sur un album
+     * 
+     * @throws Exception Si aucun album sélectionné
+     */
     public function album()
     {
         if ($this->requete->existeParametre("id")) {
