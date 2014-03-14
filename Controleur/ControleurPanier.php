@@ -25,7 +25,8 @@ class ControleurPanier extends ControleurSecurise
         $client = $this->requete->getSession()->getAttribut("client");
         $idClient = $client['idClient'];
         $articles = $this->panier->getArticles($idClient);
-        $this->genererVue(array('articles' => $articles));
+        $prixTotal = $this->panier->getPrixTotal($idClient);
+        $this->genererVue(array('articles' => $articles, 'prixTotal' => $prixTotal));
     }
 
     public function ajouter()

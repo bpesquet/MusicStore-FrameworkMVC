@@ -25,6 +25,14 @@ class Panier extends Modele
         return $ligne['nbArticles'];
     }
 
+    public function getPrixTotal($idClient) {
+        $sql = "select sum(ALB_PRIX*ARTPAN_QUANTITE) as prixTotal 
+            from T_ARTICLEPANIER AP join T_ALBUM ALB on AP.ALB_ID=ALB.ALB_ID where CLI_ID=?";
+        $resultat = $this->executerRequete($sql, array($idClient));
+        $ligne = $resultat->fetch();
+        return $ligne['prixTotal'];
+    }
+    
     public function ajouterArticle($idClient, $idAlbum)
     {
         $sql = "select * from T_ARTICLEPANIER where CLI_ID=? and ALB_ID=?";
