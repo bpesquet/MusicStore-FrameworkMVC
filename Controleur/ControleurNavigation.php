@@ -59,4 +59,5 @@ class ControleurNavigation extends ControleurPersonnalise
             throw new Exception("Action impossible : aucun album défini");
     }
 
+    
 }

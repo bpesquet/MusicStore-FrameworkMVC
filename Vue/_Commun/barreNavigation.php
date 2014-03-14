@@ -16,11 +16,6 @@
     <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
             <?php if (isset($client)): ?>
-                <!--li>
-                    <button type="button" class="btn btn-default btn-primary navbar-btn">
-                        <span class="glyphicon glyphicon-shopping-cart"></span> Panier <span class="badge">0</span>
-                    </button>
-                </li-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-user"></span> Bienvenue, <?= $this->nettoyer($client['prenom']) ?> <b class="caret"></b></a>
@@ -29,6 +24,13 @@
                         <li class="divider"></li>
                         <li><a href="connexion/deconnecter">Se déconnecter</a></li>
                     </ul>
+                </li>
+                <li>
+                    <!--button type="button" class="btn btn-default btn-primary navbar-btn"-->
+                    <a href="panier/">
+                        <span class="glyphicon glyphicon-shopping-cart"></span> Panier <span class="badge"><?= $this->nettoyer($nbArticlesPanier) ?></span>
+                    </a>
+                    <!--/button-->
                 </li>
             <?php else: ?>
                 <li class="dropdown">

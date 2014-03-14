@@ -28,8 +28,8 @@
                 </h2>
             </div>
         </div>
-        <button class="btn btn-primary" id="btnAjouter">
+        <a href="panier/ajouter/<?= $this->nettoyer($album['id']) ?>" class="btn btn-primary" id="btnAjouter">
             <span class="glyphicon glyphicon-shopping-cart"></span> Ajouter au panier
-        </button>
+        </a>
     </div>
 </div>

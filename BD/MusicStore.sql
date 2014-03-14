@@ -1,5 +1,6 @@
 /* Testé sous MySQL 5.x */
 
+drop table if exists T_ARTICLEPANIER;
 drop table if exists T_CLIENT;
 drop table if exists T_ALBUM;
 drop table if exists T_ARTISTE;
@@ -36,6 +37,16 @@ create table T_CLIENT (
   CLI_VILLE varchar(100) not null,
   CLI_COURRIEL varchar(100) not null unique,
   CLI_MDP varchar(100) not null
+) ENGINE=INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+create table T_ARTICLEPANIER (
+  ARTPAN_ID integer primary key auto_increment,
+  ALB_ID integer not null,
+  CLI_ID integer not null,
+  ARTPAN_QUANTITE integer not null default 1,
+  constraint fk_artpan_alb foreign key(ALB_ID) references T_ALBUM(ALB_ID),
+  constraint fk_artpan_cli foreign key(CLI_ID) references T_CLIENT(CLI_ID),
+  constraint uni_artpan unique(ALB_ID, CLI_ID)
 ) ENGINE=INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 insert into T_GENRE(GEN_NOM) values ('Pop/Rock');
