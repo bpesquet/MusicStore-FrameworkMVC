@@ -1,7 +1,4 @@
-# [MusicStore](https://github.com/bpesquet/MusicStore)
+MusicStore-FrameworkMVC
+=======================
 
-Projet support du cours sur l'architecture Web en PHP.
-
-Auteur : [Baptiste Pesquet](https://github.com/bpesquet)
-
-
+Application de e-commerce construite avec le framework MVC
